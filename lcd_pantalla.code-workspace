@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "../lcd_pantalla"
+		},
+		{
+			"name": "Pantalla_lcd",
+			"path": "../Pantalla_lcd"
+		},
+		{
+			"name": "Prueba de lenguajes_habitaciones",
+			"path": "../Prueba de lenguajes_habitaciones"
+		},
+		{
+			"path": "../Ejercicios pag web"
+		},
+		{
+			"name": "Practica_pag_web",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
