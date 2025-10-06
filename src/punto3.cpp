@@ -9,15 +9,6 @@ WiFiServer server(80); // Puerto 80 es el estándar para HTTP
 const int ledPin = 2; 
 int leds[3] = {0,1,2}; //verde, amarillo, rojo
 String modo;
-/*
-◦ Título de primer nivel con leyenda “Semáforo”, todo con mayúsculas, con fuente ‘Impact’, negrita y subrayada de 45px. Utilizar la clase “titulo”.
-◦ Color del fondo del cuerpo blanco.
-◦ Todo centrado.
-◦ 4 botones, uno debajo del otro, de ancho 200px y alto 200px, de color de fondo rojo (lento), amarillo (normal), verde (rápido) y naranja (emergencia); color de texto negro con 
-tamaño de fuente de 23px, borde negro de 3px sólido de radio 100px. Utilizar clase genérica “boton” y clases individuales “lento”, “normal”, “rápido” y “emergencia”.
-◦ Abajo de todo agregar una sección (span) con la leyenda “Modo: XXX” y reemplazar el XXX por el modo seleccionado en cuestión, el modo solo en negrita.
-
-*/
 // --- Página Web ---
 // Se guarda en memoria de programa (PROGMEM) para ahorrar RAM. Es más eficiente que usar un String.
 const char pagina_html[] PROGMEM = R"rawliteral(
@@ -33,14 +24,20 @@ const char pagina_html[] PROGMEM = R"rawliteral(
     background-color: white;
     }
     html { font-family: sans-serif; text-align: center; }
-    .lento{ display: inline-block; background-color:rgb(255, 0, 0); border 3px solid black; color: white;width: 200px; height: 200px
-           padding: 16px 30px; text-decoration: none; font-size: 23px; margin: 2px; cursor: pointer; border-radius: 100px; }
+    .lento{ display: inline-block; background-color:rgb(255, 0, 0); border 3px solid black; color: white;width: 200px;
+height: 200px
+           padding: 16px 30px; text-decoration: none; font-size: 23px; margin: 2px; cursor: pointer; border-radius:
+100px; }
     .normal { background-color:rgb(251, 255, 0); border 3px solid black; color: white;width: 200px; height: 200px
-           padding: 16px 30px; text-decoration: none; font-size: 23px; margin: 2px; cursor: pointer; border-radius: 100px; }       
-    .rapido{ display: inline-block; background-color: #4CAF50; border: 3px solid black; color: white; width: 200px; height: 200px
-           padding: 16px 30px; text-decoration: none; font-size: 23px; margin: 2px; cursor: pointer; border-radius: 100px; }
+           padding: 16px 30px; text-decoration: none; font-size: 23px; margin: 2px; cursor: pointer; border-radius:
+100px; }       
+    .rapido{ display: inline-block; background-color: #4CAF50; border: 3px solid black; color: white; width: 200px;
+height: 200px
+           padding: 16px 30px; text-decoration: none; font-size: 23px; margin: 2px; cursor: pointer; border-radius:
+100px; }
     .emergencia { background-color:rgb(255, 123, 0); border 3px solid black; color: white;width: 200px; height: 200px
-           padding: 16px 30px; text-decoration: none; font-size: 23px; margin: 2px; cursor: pointer; border-radius: 100px; }
+           padding: 16px 30px; text-decoration: none; font-size: 23px; margin: 2px; cursor: pointer; border-radius:
+100px; }
     .titulo {
         font-family: Impact;
         font-size: 45px;
