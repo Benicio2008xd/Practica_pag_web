@@ -50,7 +50,6 @@ const char pagina_html[] PROGMEM = R"rawliteral(
 </head>
 <body>
   <h1>Servidor Web</h1>
-  <p>Control del LED interno</p>
   <p>
     <a href="/display1"><button class="btn">display1</button></a>
   </p>
@@ -94,14 +93,14 @@ const char pagina_html[] PROGMEM = R"rawliteral(
 int i=0;
 int ta=0, td=1000, tp=0;
 int j=0;
-void setup() {
+void setup(){
 
   Serial.begin(115200);
   for(i=0;i<7;i++){
     pinMode (seg7_1[i],OUTPUT);
     digitalWrite(seg7_1[i],LOW);
     pinMode (seg7_2[i],OUTPUT);
-    digitalWrite(seg7_2[i],OUTPUT);
+    digitalWrite(seg7_2[i],LOW);
   }
 
   // --- Conexión a la red Wi-Fi ---
